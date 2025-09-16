@@ -3,9 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Navbar Example</title>
+    <style>
+       
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+ 
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f4;  
+        }
+
+         
+        .navbar {
+            display: flex;
+            justify-content: space-between;  
+            align-items: center;
+            background-color: #1a1a1a; 
+            padding: 1rem 2rem; 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        
+        .navbar-logo a {
+            color: #FFC107;  
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+         
+        .navbar-links ul {
+            margin: 0;
+            padding: 0;
+            list-style: none; 
+            display: flex; 
+        }
+
+        .navbar-links li {
+            margin-left: 2rem;  
+        }
+
+        .navbar-links a {
+            color: #ffffff;  
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 600;
+            padding-bottom: 5px;
+            transition: color 0.3s ease-in-out;  
+        }
+
+        .navbar-links a:hover {
+            color: #FFC107; 
+        }
+
+        
+        .navbar-icons a {
+             color: #ffffff;
+             font-size: 1.5rem;
+             text-decoration: none;
+             transition: color 0.3s ease-in-out;
+        }
+
+        .navbar-icons a:hover {
+            color: #FFC107;
+        }
+
+    </style>
 </head>
 <body>
-    
-</body>
+
+    <nav class="navbar">
+        <div class="navbar-logo">
+            <a href="#">STATURE</a>
+        </div>
+
+        <div class="navbar-links">
+            <ul>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">MEN</a></li>
+                <li><a href="#">WOMEN</a></li>
+                <li><a href="#">SALE</a></li>
+                <li><a href="#">ABOUT</a></li>
+            </ul>
+        </div>
+
+        <div class="navbar-icons">
+            <a href="#">🛒</a> </div>
+    </nav>
+
+    </body>
 </html>
