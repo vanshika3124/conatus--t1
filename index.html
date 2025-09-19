@@ -5,390 +5,198 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>APEX & ALTITUDE - Uncompromising Style for Plus & Tall</title>
     
-     
-    <script src="https://cdn.tailwindcss.com"></script>
-    
+    <link rel="stylesheet" href="style.css">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #F8F9FA;  
-        }
-        
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #f1f1f1;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #888;
-            border-radius: 10px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #555;
-        }
-         
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .fade-in {
-            animation: fadeIn 0.8s ease-out forwards;
-        }
-        
-        .hero-bg {
-             background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1523381294911-8d3cead13475?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-             background-size: cover;
-             background-position: center 40%;
-        }
-
-        #notification-popup {
-            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-        }
-    </style>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'primary': '#1a2a44', 
-                        'secondary': '#d4af37', 
-                        'light': '#F8F9FA',  
-                        'dark': '#121212',  
-                    }
-                }
-            }
-        }
-    </script>
 </head>
-<body class="text-dark">
+<body>
 
-     
-    <div id="notification-popup" class="fixed top-5 right-5 bg-green-500 text-white py-3 px-6 rounded-lg shadow-xl translate-x-[150%] opacity-0 z-50">
+    <div id="notification-popup" class="notification-popup">
         <p>Item added to cart!</p>
     </div>
 
-     
-    <header id="main-header" class="bg-light/80 backdrop-blur-md sticky top-0 z-40 transition-all duration-300">
-        <div class="container mx-auto px-6 py-4">
-            <div class="flex items-center justify-between">
-                 
-                <a href="#" class="text-3xl font-extrabold text-primary tracking-tighter">A&A</a>
-
-                 
-                <nav class="hidden md:flex items-center space-x-8">
-                    <a href="#men" class="text-gray-600 hover:text-primary transition-colors duration-200">Men</a>
-                    <a href="#women" class="text-gray-600 hover:text-primary transition-colors duration-200">Women</a>
-                    <a href="#featured" class="text-gray-600 hover:text-primary transition-colors duration-200">New Arrivals</a>
-                    <a href="#about" class="text-gray-600 hover:text-primary transition-colors duration-200">Our Fit</a>
-                </nav>
-
-                 
-                <div class="flex items-center space-x-5">
-                    <button class="text-gray-600 hover:text-primary"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></button>
-                    <button class="text-gray-600 hover:text-primary"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
-                    <button class="text-gray-600 hover:text-primary relative">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
-                        <span id="cart-count" class="absolute -top-2 -right-2 bg-secondary text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">0</span>
-                    </button>
-                    
-                    <button id="mobile-menu-btn" class="md:hidden text-gray-600 hover:text-primary">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-                    </button>
-                </div>
+    <header id="main-header" class="header">
+        <div class="container header-container">
+            <a href="#" class="logo">A&A</a>
+            <nav class="main-nav">
+                <a href="#men" class="nav-link">Men</a>
+                <a href="#women" class="nav-link">Women</a>
+                <a href="#featured" class="nav-link">New Arrivals</a>
+                <a href="#about" class="nav-link">Our Fit</a>
+            </nav>
+            <div class="header-icons">
+                <button class="icon-btn"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></button>
+                <button class="icon-btn"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+                <button class="icon-btn cart-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                    <span id="cart-count" class="cart-count-badge">0</span>
+                </button>
+                <button id="mobile-menu-btn" class="mobile-menu-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                </button>
             </div>
-            
-             
-            <div id="mobile-menu" class="hidden md:hidden mt-4">
-                <nav class="flex flex-col space-y-4">
-                    <a href="#men" class="text-gray-600 hover:text-primary">Men</a>
-                    <a href="#women" class="text-gray-600 hover:text-primary">Women</a>
-                    <a href="#featured" class="text-gray-600 hover:text-primary">New Arrivals</a>
-                    <a href="#about" class="text-gray-600 hover:text-primary">Our Fit</a>
-                </nav>
-            </div>
+        </div>
+        <div id="mobile-menu" class="mobile-nav hidden">
+            <nav>
+                <a href="#men" class="nav-link">Men</a>
+                <a href="#women" class="nav-link">Women</a>
+                <a href="#featured" class="nav-link">New Arrivals</a>
+                <a href="#about" class="nav-link">Our Fit</a>
+            </nav>
         </div>
     </header>
 
     <main>
-         
-        <section class="hero-bg text-white h-[60vh] md:h-[80vh] flex items-center justify-center">
-            <div class="text-center p-6 fade-in">
-                <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-4 text-shadow-lg">STYLE, UNCOMPROMISED.</h1>
-                <p class="text-lg md:text-xl max-w-2xl mx-auto mb-8">Finally, premium clothing engineered for the plus and tall. Fit, comfort, and confidence in every stitch.</p>
-                <a href="#featured" class="bg-secondary text-primary font-bold py-3 px-8 rounded-lg text-lg hover:bg-yellow-400 transition-all duration-300 transform hover:scale-105">Shop The Collection</a>
+        <section class="hero-section">
+            <div class="hero-content fade-in">
+                <h1>STYLE, UNCOMPROMISED.</h1>
+                <p>Finally, premium clothing engineered for the plus and tall. Fit, comfort, and confidence in every stitch.</p>
+                <a href="#featured" class="btn btn-secondary">Shop The Collection</a>
             </div>
         </section>
 
-        
-        <section class="py-16 md:py-24 bg-light">
-            <div class="container mx-auto px-6 text-center">
-                 <h2 class="text-3xl md:text-4xl font-bold mb-12 text-primary">Designed for You</h2>
-                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                     
-                    <div class="fade-in group relative overflow-hidden rounded-lg shadow-lg">
-                        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1887&auto=format&fit=crop" alt="Tall Men's Collection" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-end p-6">
-                            <h3 class="text-white text-2xl font-bold">The Tall Collection</h3>
-                        </div>
+        <section class="section">
+            <div class="container text-center">
+                <h2 class="section-title">Designed for You</h2>
+                <div class="grid grid-cols-3">
+                    <div class="category-card fade-in">
+                        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1887&auto=format&fit=crop" alt="Tall Men's Collection">
+                        <div class="category-card-overlay"><h3>The Tall Collection</h3></div>
                     </div>
-                     
-                     <div class="fade-in group relative overflow-hidden rounded-lg shadow-lg">
-                        <img src="plus.png" alt="Plus Women's Collection" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-end p-6">
-                            <h3 class="text-white text-2xl font-bold">The Plus Collection</h3>
-                        </div>
+                     <div class="category-card fade-in">
+                        <img src="plus.png" alt="Plus Women's Collection">
+                        <div class="category-card-overlay"><h3>The Plus Collection</h3></div>
                     </div>
-                     
-                     <div class="fade-in group relative overflow-hidden rounded-lg shadow-lg">
-                        <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?q=80&w=1935&auto=format&fit=crop" alt="New Arrivals" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-end p-6">
-                            <h3 class="text-white text-2xl font-bold">New Arrivals</h3>
-                        </div>
+                    <div class="category-card fade-in">
+                        <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?q=80&w=1935&auto=format&fit=crop" alt="New Arrivals">
+                        <div class="category-card-overlay"><h3>New Arrivals</h3></div>
                     </div>
-                 </div>
+                </div>
             </div>
         </section>
         
-         
-        <section id="featured" class="py-16 md:py-24">
-            <div class="container mx-auto px-6">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-primary">This Season's Best</h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                     
-                    <div class="fade-in bg-white rounded-lg shadow-md overflow-hidden group">
-                        <img src="p1.png" alt="Product 1" class="w-full h-auto object-cover group-hover:opacity-80 transition-opacity">
-                        <div class="p-6">
-                            <h3 class="text-lg font-semibold text-primary">Performance Henley</h3>
-                            <p class="text-gray-500 mt-1">For Tall Fit</p>
-                            <p class="text-xl font-bold text-primary mt-2">$78.00</p>
-                            <button class="add-to-cart-btn w-full mt-4 bg-primary text-white py-2 px-4 rounded-lg hover:bg-gray-800 transition-colors">Add to Cart</button>
+        <section id="featured" class="section bg-light">
+            <div class="container">
+                <h2 class="section-title text-center">This Season's Best</h2>
+                <div class="grid grid-cols-4">
+                    <div class="product-card fade-in">
+                        <img src="p1.png" alt="Product 1">
+                        <div class="product-info">
+                            <h3>Performance Henley</h3>
+                            <p class="product-fit">For Tall Fit</p>
+                            <p class="product-price">$78.00</p>
+                            <button class="btn btn-primary add-to-cart-btn">Add to Cart</button>
                         </div>
                     </div>
-                     <div class="fade-in bg-white rounded-lg shadow-md overflow-hidden group">
-                        <img src="p2.png" alt="Product 2" class="w-full h-auto object-cover group-hover:opacity-80 transition-opacity">
-                        <div class="p-6">
-                            <h3 class="text-lg font-semibold text-primary">Everyday Stretch Chino</h3>
-                            <p class="text-gray-500 mt-1">For Plus Fit</p>
-                            <p class="text-xl font-bold text-primary mt-2">$95.00</p>
-                            <button class="add-to-cart-btn w-full mt-4 bg-primary text-white py-2 px-4 rounded-lg hover:bg-gray-800 transition-colors">Add to Cart</button>
+                    <div class="product-card fade-in">
+                        <img src="p2.png" alt="Product 2">
+                        <div class="product-info">
+                            <h3>Everyday Stretch Chino</h3>
+                            <p class="product-fit">For Plus Fit</p>
+                            <p class="product-price">$95.00</p>
+                            <button class="btn btn-primary add-to-cart-btn">Add to Cart</button>
                         </div>
                     </div>
-                     <div class="fade-in bg-white rounded-lg shadow-md overflow-hidden group">
-                        <img src="p3.png" alt="Product 3" class="w-full h-auto object-cover group-hover:opacity-80 transition-opacity">
-                        <div class="p-6">
-                            <h3 class="text-lg font-semibold text-primary">Luxe Knit Sweater</h3>
-                            <p class="text-gray-500 mt-1">For Tall Fit</p>
-                            <p class="text-xl font-bold text-primary mt-2">$120.00</p>
-                            <button class="add-to-cart-btn w-full mt-4 bg-primary text-white py-2 px-4 rounded-lg hover:bg-gray-800 transition-colors">Add to Cart</button>
+                    <div class="product-card fade-in">
+                         <img src="p3.png" alt="Product 3">
+                        <div class="product-info">
+                            <h3>Luxe Knit Sweater</h3>
+                            <p class="product-fit">For Tall Fit</p>
+                            <p class="product-price">$120.00</p>
+                            <button class="btn btn-primary add-to-cart-btn">Add to Cart</button>
                         </div>
                     </div>
-                     <div class="fade-in bg-white rounded-lg shadow-md overflow-hidden group">
-                        <img src="p4.png" alt="Product 4" class="w-full h-auto object-cover group-hover:opacity-80 transition-opacity">
-                        <div class="p-6">
-                            <h3 class="text-lg font-semibold text-primary">Flowy Maxi Dress</h3>
-                            <p class="text-gray-500 mt-1">For Plus Fit</p>
-                            <p class="text-xl font-bold text-primary mt-2">$110.00</p>
-                            <button class="add-to-cart-btn w-full mt-4 bg-primary text-white py-2 px-4 rounded-lg hover:bg-gray-800 transition-colors">Add to Cart</button>
+                    <div class="product-card fade-in">
+                        <img src="p4.png" alt="Product 4">
+                        <div class="product-info">
+                            <h3>Flowy Maxi Dress</h3>
+                            <p class="product-fit">For Plus Fit</p>
+                            <p class="product-price">$110.00</p>
+                            <button class="btn btn-primary add-to-cart-btn">Add to Cart</button>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        
-        <section id="about" class="bg-primary text-light py-16 md:py-24">
-            <div class="container mx-auto px-6 text-center">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">The A&A Difference</h2>
-                <p class="max-w-3xl mx-auto text-lg text-gray-300 mb-12">We started A&A because we believe everyone deserves to wear clothes that make them feel incredible. No more compromises.</p>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-                    <div class="fade-in">
-                        <div class="bg-secondary p-4 rounded-full inline-block mb-4">
-                            <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2">Engineered Fit</h3>
-                        <p class="text-gray-300">Data-driven designs for perfect proportions, from sleeve length to torso width. Say goodbye to "good enough".</p>
+        <section id="about" class="section bg-primary text-light">
+            <div class="container text-center">
+                <h2 class="section-title">The A&A Difference</h2>
+                <p class="section-subtitle">We started A&A because we believe everyone deserves to wear clothes that make them feel incredible. No more compromises.</p>
+                <div class="grid grid-cols-3">
+                    <div class="feature-box fade-in">
+                        <div class="feature-icon"><svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg></div>
+                        <h3>Engineered Fit</h3>
+                        <p>Data-driven designs for perfect proportions, from sleeve length to torso width. Say goodbye to "good enough".</p>
                     </div>
-                    <div class="fade-in">
-                        <div class="bg-secondary p-4 rounded-full inline-block mb-4">
-                            <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2">Premium Materials</h3>
-                        <p class="text-gray-300">We source high-performance, comfortable fabrics that last. Style and substance, hand in hand.</p>
+                    <div class="feature-box fade-in">
+                        <div class="feature-icon"><svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg></div>
+                        <h3>Premium Materials</h3>
+                        <p>We source high-performance, comfortable fabrics that last. Style and substance, hand in hand.</p>
                     </div>
-                    <div class="fade-in">
-                        <div class="bg-secondary p-4 rounded-full inline-block mb-4">
-                            <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2">Community-Driven</h3>
-                        <p class="text-gray-300">Our designs are inspired and approved by you. We listen, we learn, and we create for our community.</p>
+                    <div class="feature-box fade-in">
+                        <div class="feature-icon"><svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg></div>
+                        <h3>Community-Driven</h3>
+                        <p>Our designs are inspired and approved by you. We listen, we learn, and we create for our community.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-         
-        <section class="py-16 md:py-24 bg-light">
-             <div class="container mx-auto px-6 text-center max-w-2xl">
-                 <h2 class="text-3xl font-bold text-primary mb-4">Join The Movement</h2>
-                 <p class="text-gray-600 mb-8">Be the first to know about new collections, exclusive offers, and A&A community events. Plus, get 15% off your first order.</p>
-                 <form id="newsletter-form" class="flex flex-col sm:flex-row gap-4">
-                     <input type="email" id="email-input" placeholder="Enter your email address" required class="flex-grow w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:ring-2 focus:ring-secondary focus:border-secondary outline-none">
-                     <button type="submit" class="bg-primary text-white font-bold py-3 px-8 rounded-lg hover:bg-gray-800 transition-colors">Subscribe</button>
+        <section class="section bg-light">
+             <div class="container newsletter-container">
+                 <h2 class="section-title">Join The Movement</h2>
+                 <p class="section-subtitle">Be the first to know about new collections, exclusive offers, and A&A community events. Plus, get 15% off your first order.</p>
+                 <form id="newsletter-form" class="newsletter-form">
+                     <input type="email" id="email-input" placeholder="Enter your email address" required>
+                     <button type="submit" class="btn btn-primary">Subscribe</button>
                  </form>
-                 <p id="form-message" class="mt-4 text-green-600"></p>
+                 <p id="form-message" class="form-message"></p>
              </div>
         </section>
     </main>
     
-     
-    <footer class="bg-dark text-light">
-        <div class="container mx-auto px-6 py-12">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                 
-                <div>
-                    <h4 class="text-xl font-bold mb-4 tracking-tighter">A&A</h4>
-                    <p class="text-gray-400">Uncompromising style for the modern man and woman. Built for plus and tall.</p>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4 class="logo">A&A</h4>
+                    <p>Uncompromising style for the modern man and woman. Built for plus and tall.</p>
                 </div>
-                 
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Shop</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-secondary">Men's Collection</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-secondary">Women's Collection</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-secondary">Size Guide</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-secondary">Sale</a></li>
+                <div class="footer-col">
+                    <h4>Shop</h4>
+                    <ul>
+                        <li><a href="#">Men's Collection</a></li>
+                        <li><a href="#">Women's Collection</a></li>
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">Sale</a></li>
                     </ul>
                 </div>
-                 
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Support</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-secondary">Contact Us</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-secondary">FAQ</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-secondary">Shipping & Returns</a></li>
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Shipping & Returns</a></li>
                     </ul>
                 </div>
-                 
-                    <h4 class="text-lg font-semibold mb-4">Follow Us</h4>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-secondary"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.323-1.325z"></path></svg></a>
-                        <a href="#" class="text-gray-400 hover:text-secondary"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.689-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44 1.441-.645 1.441-1.44c0-.795-.645-1.44-1.441-1.44z"></path></svg></a>
-                        <a href="#" class="text-gray-400 hover:text-secondary"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616v.064c0 2.299 1.634 4.218 3.803 4.659-.566.155-1.166.19-1.785.068.613 1.9 2.383 3.285 4.492 3.324-1.743 1.366-3.837 2.18-6.162 2.18-.407 0-.808-.024-1.207-.07 2.252 1.437 4.931 2.28 7.794 2.28 9.284 0 14.376-7.618 14.043-14.432.993-.715 1.854-1.613 2.542-2.636z"></path></svg></a>
+                <div class="footer-col">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.323-1.325z"></path></svg></a>
+                        <a href="#"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.689-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44 1.441-.645 1.441-1.44c0-.795-.645-1.44-1.441-1.44z"></path></svg></a>
+                        <a href="#"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616v.064c0 2.299 1.634 4.218 3.803 4.659-.566.155-1.166.19-1.785.068.613 1.9 2.383 3.285 4.492 3.324-1.743 1.366-3.837 2.18-6.162 2.18-.407 0-.808-.024-1.207-.07 2.252 1.437 4.931 2.28 7.794 2.28 9.284 0 14.376-7.618 14.043-14.432.993-.715 1.854-1.613 2.542-2.636z"></path></svg></a>
                     </div>
                 </div>
             </div>
-            <div class="mt-8 border-t border-gray-700 pt-8 text-center text-gray-500">
+            <div class="footer-bottom">
                 <p>&copy; 2025 APEX & ALTITUDE. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-            const mobileMenu = document.getElementById('mobile-menu');
-            const mainHeader = document.getElementById('main-header');
-            const cartCountEl = document.getElementById('cart-count');
-            const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
-            const notificationPopup = document.getElementById('notification-popup');
-            const newsletterForm = document.getElementById('newsletter-form');
-            const emailInput = document.getElementById('email-input');
-            const formMessage = document.getElementById('form-message');
-
-            let cartCount = 0;
-
-            
-            mobileMenuBtn.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-            });
-
-            
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 50) {
-                    mainHeader.classList.add('shadow-md');
-                    mainHeader.classList.remove('py-4');
-                    mainHeader.classList.add('py-3');
-                } else {
-                    mainHeader.classList.remove('shadow-md');
-                    mainHeader.classList.add('py-4');
-                    mainHeader.classList.remove('py-3');
-                }
-            });
-
-             
-            addToCartButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    cartCount++;
-                    cartCountEl.textContent = cartCount;
-                    showNotification();
-                });
-            });
-
-            function showNotification() {
-                notificationPopup.classList.remove('translate-x-[150%]', 'opacity-0');
-                notificationPopup.classList.add('translate-x-0', 'opacity-100');
-
-                setTimeout(() => {
-                    notificationPopup.classList.add('translate-x-[150%]', 'opacity-0');
-                    notificationPopup.classList.remove('translate-x-0', 'opacity-100');
-                }, 3000);  
-            }
-            
-             
-            newsletterForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                if (emailInput.value && emailInput.checkValidity()) {
-                    formMessage.textContent = `Thanks for subscribing, ${emailInput.value}!`;
-                    emailInput.value = '';
-                    setTimeout(() => formMessage.textContent = '', 4000);
-                } else {
-                    formMessage.textContent = 'Please enter a valid email address.';
-                    formMessage.classList.add('text-red-500');
-                }
-            });
-
-
-            
-            const fadeInElements = document.querySelectorAll('.fade-in');
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('fade-in-visible');
-                    }
-                });
-            }, {
-                threshold: 0.1
-            });
-            
-            fadeInElements.forEach(el => {
-                observer.observe(el);
-            });
-             
-            const animatedElements = document.querySelectorAll('.fade-in');
-            const intersectionObserver = new IntersectionObserver((entries, observer) => {
-              entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                  entry.target.style.animationPlayState = 'running';
-                  observer.unobserve(entry.target);
-                }
-              });
-            }, { threshold: 0.1 });
-            
-            animatedElements.forEach(el => {
-              el.style.animationPlayState = 'paused';  
-              intersectionObserver.observe(el);
-            });
-
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
-
