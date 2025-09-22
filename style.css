@@ -359,6 +359,10 @@ body {
     font-weight: 600;
     margin-bottom: 1rem;
 }
+
+.footer-col {
+    text-align: center;  
+}
 .footer-col .logo { color: white; }
 .footer-col p, .footer-col ul li {
     color: var(--text-light-gray);
@@ -386,6 +390,12 @@ body {
 .social-icons svg {
     width: 1.5rem;
     height: 1.5rem;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center; 
 }
 .footer-bottom {
     margin-top: 2rem;
